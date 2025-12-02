@@ -1,4 +1,4 @@
--- 1. Scripts SQL de INSERT
+-- 1*. Scripts SQL de INSERT
 INSERT INTO Categoria (NomeCategoria, Descricao) VALUES
 ('Tecnologia', 'Livros sobre tecnologia e computação'),
 ('Ficção', 'Livros de ficção e narrativas'),
@@ -15,7 +15,7 @@ INSERT INTO Emprestimo (LivroID, UsuarioID, DataEmprestimo, DataDevolucaoPrevist
 (1, 1, '2025-01-10', '2025-01-20', 'Em andamento'),
 (2, 2, '2025-01-11', '2025-01-21', 'Em andamento'),
 (3, 1, '2025-01-12', '2025-01-22', 'Em andamento');
--- 2. Consultas SELECT
+-- 2*. Consultas SELECT
 -- 1. Livros com categorias
 SELECT Livro.Titulo, Categoria.NomeCategoria
 FROM Livro
@@ -36,7 +36,7 @@ ORDER BY Total DESC
 LIMIT 5;
 -- 5. Livros ordenados por ano
 SELECT * FROM Livro ORDER BY AnoPublicacao DESC;
--- 3. Comandos UPDATE
+-- 3*. Comandos UPDATE
 UPDATE Emprestimo
 SET Status = 'Concluído'
 WHERE EmprestimoID = 1;
@@ -46,10 +46,11 @@ WHERE UsuarioID = 1;
 UPDATE Livro
 SET AnoPublicacao = 2021
 WHERE LivroID = 1;
--- 4. Comandos DELETE
+-- 4*. Comandos DELETE
 DELETE FROM Emprestimo
 WHERE Status = 'Concluído';
 DELETE FROM Usuario
 WHERE UsuarioID = 2;
 DELETE FROM Categoria
+
 WHERE CategoriaID = 3;
